@@ -24,7 +24,7 @@
             <div class="div my-5" id="center">
             <h1 class="mb-4">Hangman</h1>
 
-           <div id="difficultySelection"><!--REMOVE THIS d-none--> <!--    upateUI()-->
+           <div id="difficultySelection"><!--REMOVE THIS d-none--> <!--upateUI()-->
                 <h3>Select Difficulty</h3>
                 <button class="btn btn-success difficulty-btn" onclick="startGame('easy')">Easy</button>
                 <button class="btn btn-warning difficulty-btn" onclick="startGame('medium')">Medium</button>
@@ -38,7 +38,7 @@
                 
                 <div class="mb-3">
                     <input type="text" id="letterInput" maxlength="1" class="form-control d-inline-block w-auto" placeholder="Enter a Letter">
-                    <button id="guessBtn" class="btn btn-warning" onclick="guessLetter()">Guess</button>
+                    <button id="guessBtn" class="btn btn-warning" onclick="guessedLetter()">Guess</button>
                 </div>
 
                 <p id="wrongLetters" class="fw-bold text-danger">Wrong Guesses:</p>
