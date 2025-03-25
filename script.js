@@ -117,3 +117,51 @@ function guessedLetter() {
     document.getElementById('letterInput').focus() // Refocus input field for next guess
 }
 
+function updateWrongGuess(guessedLetter){
+    wrongGuesses++
+    document.getElementById('wrongLetters').textContent += `${guessedLetter}`  
+    //document.getElementById('shamrock').src= `imgs/shamrock${6-wrongGuesses}.jpg`
+
+    if (wrongGuesses === maxMistakes){
+        endGame(false)
+      }
+}
+
+function updateCorrectGuess(guessedLetter){
+    let newDisplayedWord =''
+
+    for (let i=0; i < selectedWord.length; i++){
+        if (selectedWord[i] === guessedLetter){
+            newDisplayedWord += guessedLetter
+        } else {
+            newDisplayedWord += displayedWord[i]
+        }
+    }
+
+    displayedWord = newDisplayedWord
+    updateUI()  
+
+    //Check if the Player has guessed all letters
+    if (!displayedWord.includes('_')) {
+        endGame(true)
+    }
+}
+
+function endGame(won){
+    let message = won
+    if (won) {
+        message = '🎉 Congratulations! You guessed the word! 🍀';
+       // .document.getElementById('messageBox').addEventListener     finish this
+    } else {
+        message = `❌ Game Over! The word was "${selectedWord}".`;
+    }
+  
+  setTimeout(() => alert(message), 100) // Display alert after short delay
+  }
+
+  //Enter Key Functionality
+  document.getElementById('letterInput').addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        guessedLetter();
+    }
+});
