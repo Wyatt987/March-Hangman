@@ -109,8 +109,10 @@ function guessedLetter() {
     //Check if guessed letter is in the word
     if (selectedWord.includes(guessedLetter)) {
         updateCorrectGuess(guessedLetter)
+        document.getElementById("soundEffect").play();
     } else {
         updateWrongGuess(guessedLetter)
+        document.getElementById("soundEffect2").play();
     }
 
     inputField.value = '' // clear input field
@@ -150,13 +152,21 @@ function updateCorrectGuess(guessedLetter){
 function endGame(won){
     let message = won
     if (won) {
+        messageBox = document.getElementById('messageBox');
         message = '🎉 Congratulations! You guessed the word! 🍀';
-       // .document.getElementById('messageBox').addEventListener     finish this
+        messageBox.classList.remove('d-none');
+        messageBox.innerText = message;
     } else {
         message = `❌ Game Over! The word was "${selectedWord}".`;
+        document.getElementById('messageBox2').classList.remove('d-none')
+
+        messageBox2 = document.getElementById('messageBox2');
+        message2 = `❌ Game Over! The word was "${selectedWord}".`;
+        messageBox2.classList.remove('d-none');
+        messageBox2.innerText = message2;
     }
   
-  setTimeout(() => alert(message), 100) // Display alert after short delay
+  setTimeout(() => message(message), 100) // Display alert after short delay
   }
 
   //Enter Key Functionality

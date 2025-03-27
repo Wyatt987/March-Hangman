@@ -34,3 +34,9 @@ main {
     color: #721c24;
     border: 2px solid #f5c6cb;
 }
+#messageBox2 {
+    height: 50px;
+}
+#messageBox {
+    height: 50px;
+}
