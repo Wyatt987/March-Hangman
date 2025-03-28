@@ -41,6 +41,17 @@ function startGame(level){
     document.getElementById('difficultyBox').classList.remove('d-none')
     document.getElementById('difficultyBox').classList.add('d-block')
 
+    document.getElementById('difficultyBox').classList.remove('d-none')
+    document.getElementById('difficultyBox').classList.add('d-block')
+
+    document.getElementById('restartBtn').classList.remove('d-none');
+
+    document.getElementById('hideLater').classList.remove('d-none');
+
+    document.getElementById('shamrock').classList.remove('d-none');
+    
+    document.getElementById('wrongLetters').classList.remove('d-none');
+
     document.getElementById('difficultySelection').classList.add('d-none')
     document.getElementById('letterInput').focus()
 
@@ -122,7 +133,7 @@ function guessedLetter() {
 function updateWrongGuess(guessedLetter){
     wrongGuesses++
     document.getElementById('wrongLetters').textContent += `${guessedLetter}`  
-    //document.getElementById('shamrock').src= `imgs/shamrock${6-wrongGuesses}.jpg`
+    document.getElementById('shamrock').src= `imgs/shamrock${6-wrongGuesses}.png`
 
     if (wrongGuesses === maxMistakes){
         endGame(false)
@@ -175,3 +186,33 @@ function endGame(won){
         guessedLetter();
     }
 });
+
+function restartGame() {
+    // Reset game variables
+    wrongGuesses = 0;
+    guessedLetters = [];
+
+    // Hide boxes
+    //Messages
+    document.getElementById('messageBox').classList.add('d-none');
+    document.getElementById('messageBox2').classList.add('d-none');
+    //Shamrock
+    document.getElementById('shamrock').classList.add('d-none');
+    //Guess Box
+    document.getElementById('hideLater').classList.add('d-none');
+    //Restart Button
+    document.getElementById('restartBtn').classList.add('d-none');
+    //Select Difficulty Box
+    document.getElementById('difficultyBox').classList.add('d-none');
+    
+    document.getElementById('wrongLetters').classList.add('d-none');
+
+
+    // Reset UI elements
+    document.getElementById('wrongLetters').textContent = 'Wrong Guesses:';
+    document.getElementById('shamrock').src = 'imgs/shamrock6.png';
+    document.getElementById('wordDisplay').textContent = '';
+
+    // Show difficulty selection again
+    document.getElementById('difficultySelection').classList.remove('d-none');
+}
