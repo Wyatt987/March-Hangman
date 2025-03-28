@@ -23,12 +23,13 @@
         <!--Sound Effects-->
         <audio id="soundEffect" src="sounds/Correct Answer sound effect.mp3"></audio>
         <audio id="soundEffect2" src="sounds/real-incorrect.mp4"></audio>
+        <!--Main Game-->
         <main class="container text-center rounded">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-8">
                     <div class="my-5 p-4 border rounded shadow bg-light" id="center">
                         <h1 class="mb-4 text-primary">Hangman</h1>
-        
+                        <!--Select Difficutly-->
                         <div id="difficultySelection" class="mb-3"> <!-- REMOVE d-none -->
                             <h3 class="text-secondary">Select Difficulty</h3>
                             <div class="d-flex justify-content-center gap-2">
@@ -37,29 +38,30 @@
                                 <button class="btn btn-danger difficulty-btn" onclick="startGame('hard')">Hard</button>
                             </div>
                         </div>
-        
+                        <!--Difficulty Box-->
                         <div id="difficultyBox" class="mt-3 p-3 fw-bold border rounded bg-white text-dark d-none"></div> <!-- ADD d-none here -->
-        
+                        <!--Guess Word Area-->
                         <div class="mt-4 d-none text-center" id="gameArea"> <!-- ADD d-none here -->
                             <h2 id="wordDisplay" class="mb-3 display-5">_ _ _ _ _</h2>
-        
+                            <!--Input guess area-->
                             <div class="mb-3" id="hideLater">
                                 <input type="text" id="letterInput" maxlength="1" 
                                        class="form-control d-inline-block w-auto text-center border-primary" 
                                        placeholder="Enter a Letter">
                                 <button id="guessBtn" class="btn btn-warning ms-2" onclick="guessedLetter()">Guess</button>
                             </div>
-        
+                            <!--List of wrong guessed letters-->
                             <p id="wrongLetters" class="fw-bold text-danger">Wrong Guesses:</p>
-        
+                            <!--Picture-->
                             <div class="my-3">
                                 <img src="imgs/Shamrock6.png" alt="Shamrock Image" id="shamrock" 
                                      class="shamrock-img img-fluid rounded shadow">
                             </div>
-        
+                            <!--Restart button-->
                             <div class="my-4">
                                 <button id="restartBtn" class="btn btn-danger btn-lg" onclick="restartGame()">Restart</button>
                             </div>
+                            <!--Messages for if you win or lose boxes-->
                             <div class="my-4">
                                 <div id="messageBox" class="align-content-center fs-2 d-none rounded bg-success text-light ">Restart</div>
                             </div>
