@@ -19,25 +19,40 @@
         />
     </head>
 
-    <body>
+    <body id="bg-color">
         <!--Sound Effects-->
         <audio id="soundEffect" src="sounds/Correct Answer sound effect.mp3"></audio>
         <audio id="soundEffect2" src="sounds/real-incorrect.mp4"></audio>
         <!--Main Game-->
-        <main class="container text-center rounded">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-8">
-                    <div class="my-5 p-4 border rounded shadow bg-light" id="center">
-                        <h1 class="mb-4 text-primary">Hangman</h1>
-                        <!--Select Difficutly-->
-                        <div id="difficultySelection" class="mb-3"> <!-- REMOVE d-none -->
-                            <h3 class="text-secondary">Select Difficulty</h3>
-                            <div class="d-flex justify-content-center gap-2">
-                                <button class="btn btn-success difficulty-btn" onclick="startGame('easy')">Easy</button>
-                                <button class="btn btn-warning difficulty-btn" onclick="startGame('medium')">Medium</button>
-                                <button class="btn btn-danger difficulty-btn" onclick="startGame('hard')">Hard</button>
+        <main class="container text-center rounded" id="adjust">
+            <div class="row bg-dark border border-warning border-5 p-3 rounded bg-light justify-content-center">
+                <div class="col-3 d-flex align-items-center"> 
+                    <div class="row">
+                        <div class="col-12">
+                            <img src="imgs/Stick-Man.png" alt="Stick-Man" id="og-stick-man" class="img-fluid rounded shadow">
+                            <!--Picture-->
+                            <div class="my-3">
+                                <img src="imgs/Shamrock6.png" alt="Shamrock Image" id="shamrock" 
+                                     class="shamrock-img img-fluid rounded d-none">
                             </div>
                         </div>
+                    </div>
+                </div>
+                    <div class="col-9">
+                        <div class="row">
+                            <div class="my-5 p-4 col-12 " id="center">
+                                <h1 class="mb-4 text-warning">Hangman</h1>
+                                <div id="difficultySelection" class="mb-3 col-12"> <!-- REMOVE d-none -->
+                                    <h3 class="text-secondary">Select Difficulty</h3>
+                                    <div class="d-flex justify-content-center gap-2 row">
+                                        <button class="btn btn-success difficulty-btn col-3" onclick="startGame('easy')">Easy</button>
+                                        <button class="btn btn-warning difficulty-btn col-3" onclick="startGame('medium')">Medium</button>
+                                        <button class="btn btn-danger difficulty-btn col-3" onclick="startGame('hard')">Hard</button>
+                                    </div>
+                                </div>
+                            </div>
+                        <!--Select Difficutly-->
+                        
                         <!--Difficulty Box-->
                         <div id="difficultyBox" class="mt-3 p-3 fw-bold border rounded bg-white text-dark d-none"></div> <!-- ADD d-none here -->
                         <!--Guess Word Area-->
@@ -52,11 +67,7 @@
                             </div>
                             <!--List of wrong guessed letters-->
                             <p id="wrongLetters" class="fw-bold text-danger">Wrong Guesses:</p>
-                            <!--Picture-->
-                            <div class="my-3">
-                                <img src="imgs/Shamrock6.png" alt="Shamrock Image" id="shamrock" 
-                                     class="shamrock-img img-fluid rounded shadow">
-                            </div>
+                            
                             <!--Restart button-->
                             <div class="my-4">
                                 <button id="restartBtn" class="btn btn-danger btn-lg" onclick="restartGame()">Restart</button>
@@ -72,7 +83,9 @@
                     </div>
                 </div>
             </div>
+        </div>
         </main>
+        
         
         <footer>
             <!-- place footer here -->

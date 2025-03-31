@@ -7,7 +7,7 @@ main {
 #center {
     border-radius: 30px;
     margin-bottom: 20vh;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 6px rgb(255, 230, 0);
 }
 
 #gameArea {
@@ -39,4 +39,21 @@ main {
 }
 #messageBox {
     height: 50px;
+}
+#bg-color {
+    background-color: #191a1b;
+    font-family: 'Arial', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    overflow-y: hidden;
+}
+.adjust {
+    padding-top: 140px;
+}
+#yellow {
+    border-color: yellow;
+}
+
+text-secondary {
+    text-shadow: 2px 2px 4px rgb(255, 217, 0);
 }

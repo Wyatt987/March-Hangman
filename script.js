@@ -78,14 +78,21 @@ function updateDifficultyDisplay(level) {
     if(level === 'easy') {
         difficultyBox.classList.add('easy')
         difficultyBox.innerText = 'Difficulty: Easy 🥱'
-
+        document.getElementById('og-stick-man').classList.add('d-none')
+        document.getElementById('shamrock').classList.remove('d-none')
+        document.getElementById('adjust').classList.add('adjust')
     } else if(level === 'medium') {
         difficultyBox.classList.add('medium')
         difficultyBox.innerText = 'Difficulty: Medium 😐'
-
+        document.getElementById('og-stick-man').classList.add('d-none')
+        document.getElementById('shamrock').classList.remove('d-none')
+        document.getElementById('adjust').classList.add('adjust')
     } else if(level === 'hard') {
         difficultyBox.classList.add('hard')
         difficultyBox.innerText = 'Difficulty: Hard 🫠'
+        document.getElementById('og-stick-man').classList.add('d-none')
+        document.getElementById('shamrock').classList.remove('d-none')
+        document.getElementById('adjust').classList.add('adjust')
     }
 }
 
