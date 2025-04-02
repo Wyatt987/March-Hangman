@@ -45,7 +45,7 @@ main {
     font-family: 'Arial', sans-serif;
     font-size: 1.2rem;
     line-height: 1.5;
-    overflow-y: hidden;
+    overflow-x: hidden;
 }
 .adjust {
     padding-top: 80px;
