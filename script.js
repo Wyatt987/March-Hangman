@@ -1,15 +1,51 @@
 //Word List
 const wordList = [
     'gold',
-    'luck',
-    'clover',
+    'baby',
+    'crib',
+    'love',
+    'hope',
+    'kind',
+    'jump',
+    'play',
+    'tree',
+    'star',
+    'blue',
+    'moon',
     'rain',
+    'clover',
+    'dream',
+    'light',
+    'apple',
+    'brave',
+    'happy',
+    'sunset',
+    'ticket',
+    'garden',
+    'smooth',
+    'laughter',
+    'theater',
+    'lanturn',
+    'fiction',
+    'journey',
+    'mystery',
     'charm',
     'parade',
     'leprechaun',
     'treasure',
     'celebration',
     'greenery',
+    'shenanigans',
+    'scenical',
+    'painting',
+    'violinist',
+    'costumes',
+    'evenings',
+    'pumpkins',
+    'modeling',
+    'furniture',
+    'mustangs',
+    'violinist',
     'shenanigans',
     'tradition'
 ]
@@ -19,6 +55,8 @@ let = selectedWord =''
 let displayedWord = ''
 let wrongGuesses = 0
 let guessedLetters = []
+let wins = 0;
+let losses = 0;
 const maxMistakes = 6
 
 
@@ -57,6 +95,10 @@ function startGame(level){
 
 
 }
+
+function updateScoreTracker() {
+    const scoreTracker = document.getElementById('scoreTracker');
+    scoreTracker.textContent = `Wins: ${wins} | Losses: ${losses}`;}
 
 
 
@@ -170,11 +212,13 @@ function updateCorrectGuess(guessedLetter){
 function endGame(won){
     let message = won
     if (won) {
+        wins++ // Add 1 to win count
         messageBox = document.getElementById('messageBox');
         message = '🎉 Congratulations! You guessed the word! 🍀';
         messageBox.classList.remove('d-none');
         messageBox.innerText = message;
     } else {
+        losses++; // Add 1 to loss count
         message = `❌ Game Over! The word was "${selectedWord}".`;
         document.getElementById('messageBox2').classList.remove('d-none')
 
@@ -183,7 +227,9 @@ function endGame(won){
         messageBox2.classList.remove('d-none');
         messageBox2.innerText = message2;
     }
-  
+   updateScoreTracker();
+
+   document.getElementById('letterInput').disabled = true; // Disables letter input after game over
   setTimeout(() => message(message), 100) // Display alert after short delay
   }
 
@@ -193,6 +239,8 @@ function endGame(won){
         guessedLetter();
     }
 });
+
+updateScoreTracker();
 
 function restartGame() {
     // Reset game variables
@@ -219,7 +267,10 @@ function restartGame() {
     document.getElementById('wrongLetters').textContent = 'Wrong Guesses:';
     document.getElementById('shamrock').src = 'imgs/shamrock6.png';
     document.getElementById('wordDisplay').textContent = '';
+    document.getElementById('og-stick-man').classList.remove('d-none')
 
     // Show difficulty selection again
     document.getElementById('difficultySelection').classList.remove('d-none');
+    // Allows letter input to be typed again game over
+    document.getElementById('letterInput').disabled = false; 
 }

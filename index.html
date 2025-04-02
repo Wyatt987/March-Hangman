@@ -17,6 +17,8 @@
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous"
         />
+        <link rel="stylesheet" href="https://use.typekit.net/yhy6awx.css">
+
     </head>
 
     <body id="bg-color">
@@ -40,10 +42,11 @@
                 </div>
                     <div class="col-9">
                         <div class="row">
+                            <!--Select Difficutly-->
                             <div class="my-5 p-4 col-12 " id="center">
-                                <h1 class="mb-4 text-warning">Hangman</h1>
+                                <h1 class="mb-4 text-warning" id="font">Hangman</h1>
                                 <div id="difficultySelection" class="mb-3 col-12"> <!-- REMOVE d-none -->
-                                    <h3 class="text-secondary">Select Difficulty</h3>
+                                    <h3 class="text-warning" id="outline-yellow">Select Difficulty</h3>
                                     <div class="d-flex justify-content-center gap-2 row">
                                         <button class="btn btn-success difficulty-btn col-3" onclick="startGame('easy')">Easy</button>
                                         <button class="btn btn-warning difficulty-btn col-3" onclick="startGame('medium')">Medium</button>
@@ -51,13 +54,16 @@
                                     </div>
                                 </div>
                             </div>
-                        <!--Select Difficutly-->
-                        
+                        <!--Win tracker-->
+                        <div class="my-4">
+                            <h3 class="text-warning">Score Tracker</h3>
+                            <p id="scoreTracker" class="text-light">Wins: 0 | Losses: 0</p>
+                        </div>
                         <!--Difficulty Box-->
-                        <div id="difficultyBox" class="mt-3 p-3 fw-bold border rounded bg-white text-dark d-none"></div> <!-- ADD d-none here -->
+                        <div id="difficultyBox" class="mt-3 p-3 fw-bold border rounded text-dark d-none"></div> <!-- ADD d-none here -->
                         <!--Guess Word Area-->
                         <div class="mt-4 d-none text-center" id="gameArea"> <!-- ADD d-none here -->
-                            <h2 id="wordDisplay" class="mb-3 display-5">_ _ _ _ _</h2>
+                            <h2 id="wordDisplay" class="mb-3 display-5 text-light">_ _ _ _ _</h2>
                             <!--Input guess area-->
                             <div class="mb-3" id="hideLater">
                                 <input type="text" id="letterInput" maxlength="1" 
@@ -77,7 +83,7 @@
                                 <div id="messageBox" class="align-content-center fs-2 d-none rounded bg-success text-light ">Restart</div>
                             </div>
                             <div class="my-4">
-                                <div id="messageBox2" class="align-content-center fs-2 d-none rounded bg-danger text-light ">Restart</div>
+                                <div id="messageBox2" class="align-content-center fs-4 d-none rounded bg-danger text-light ">Restart</div>
                             </div>
                         </div>
                     </div>

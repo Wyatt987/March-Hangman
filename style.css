@@ -20,7 +20,7 @@ main {
 }
 
 .easy {
-    background-color: #d4edda;
+    background-color: #fcff55;
     color: #155724;
     border: 2px solid #c3e6cb;
 }
@@ -48,12 +48,21 @@ main {
     overflow-y: hidden;
 }
 .adjust {
-    padding-top: 140px;
+    padding-top: 80px;
 }
 #yellow {
     border-color: yellow;
 }
 
-text-secondary {
-    text-shadow: 2px 2px 4px rgb(255, 217, 0);
+#outline-yellow {
+    text-shadow: 2px 2px 20px rgb(255, 217, 0);
+    font-family: "louvette-deck", serif;
+    font-weight: 500;
+    font-style: italic;
+}
+
+#font {
+    font-family: "louvette-deck", serif;
+font-weight: 500;
+font-style: italic;
 }
